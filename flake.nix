@@ -16,6 +16,9 @@
           vapoursynth-eedi3 = pkgs.callPackage ./pkgs/vapoursynth-plugins/eedi3 {
             inherit (sources.vapoursynth-eedi3) pname src version;
           };
+          vapoursynth-bwdif = pkgs.callPackage ./pkgs/vapoursynth-plugins/bwdif {
+            inherit (sources.vapoursynth-bwdif) pname src version;
+          };
         };
 
         defaultPackage = packages.vapoursynth-eedi3;
@@ -28,6 +31,7 @@
               nixpkgs-fmt.enable = true;
               nix-linter.enable = true;
             };
+            excludes = [ "_sources" ];
           };
         };
         devShell = nixpkgs.legacyPackages.${system}.mkShell {
