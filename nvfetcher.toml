@@ -5,3 +5,7 @@ fetch.github = "HomeOfVapourSynthEvolution/VapourSynth-EEDI3"
 [vapoursynth-bwdif]
 src.github = "HomeOfVapourSynthEvolution/VapourSynth-Bwdif"
 fetch.github = "HomeOfVapourSynthEvolution/VapourSynth-Bwdif"
+
+[vapoursynth-nnedi3]
+src.github = "dubhater/vapoursynth-nnedi3"
+fetch.github = "dubhater/vapoursynth-nnedi3"

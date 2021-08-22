@@ -19,6 +19,9 @@
           vapoursynth-bwdif = pkgs.callPackage ./pkgs/vapoursynth-plugins/bwdif {
             inherit (sources.vapoursynth-bwdif) pname src version;
           };
+          vapoursynth-nnedi3 = pkgs.callPackage ./pkgs/vapoursynth-plugins/nnedi3 {
+            inherit (sources.vapoursynth-nnedi3) pname src version;
+          };
         };
 
         defaultPackage = packages.vapoursynth-eedi3;
@@ -37,7 +40,6 @@
         devShell = nixpkgs.legacyPackages.${system}.mkShell {
           inherit (self.checks.${system}.pre-commit-check) shellHook;
         };
-
       }
     );
 }

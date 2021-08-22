@@ -25,4 +25,16 @@
       sha256 = "1q79l27arcfl7k49czsspb4z7zfr616xsxsb04x9b4d9l763716x";
     };
   };
+  vapoursynth-nnedi3 = {
+    pname = "vapoursynth-nnedi3";
+    version = "v12";
+    src = fetchgit {
+      url = "https://github.com/dubhater/vapoursynth-nnedi3";
+      rev = "v12";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sha256 = "1valcf8ns4wrfq6q5js029a93i58vr37mqw5na6922avg04wzpwd";
+    };
+  };
 }
