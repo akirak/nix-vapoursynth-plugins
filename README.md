@@ -17,8 +17,13 @@ copying it to your plugin directory or creating a symbolic link to it in the dir
 
 ## List of plugins
 
-This is an experimental project, and only a limited number of plugins are provided at present. The
-following is a list of packages provided in this repository.
+This is an experimental project, and only a limited number of plugins are provided.
+At present, the following plugins are provided from this repository:
 
-- `vapoursynth-bwdif`
-- `vapoursynth-eedi3`
+- `eedi3`
+- `bwdif`: Doesn't seem to work in VapourSynth. I don't know how to load the plugin.
+
+My initial goal is to allow applying [QTGMC](http://avisynth.nl/index.php/QTGMC)
+to an interlaced video via `nix run`. QTGMC support for VapourSynth is part of
+[havsfunc](https://github.com/HomeOfVapourSynthEvolution/havsfunc), so I will
+take a look at it.
