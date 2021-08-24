@@ -9,10 +9,7 @@
       let
         pkgs = nixpkgs.legacyPackages.${system};
         sources = pkgs.callPackage ./_sources/generated.nix { };
-      in
-      rec
-      {
-        packages = flake-utils.lib.flattenTree {
+        plugin-packages = rec {
           vapoursynth-eedi3 = pkgs.callPackage ./pkgs/vapoursynth-plugins/eedi3 {
             inherit (sources.vapoursynth-eedi3) pname src version;
           };
@@ -23,8 +20,18 @@
             inherit (sources.vapoursynth-nnedi3) pname src version;
           };
         };
+        vapoursynth-all-plugins = pkgs.symlinkJoin {
+          name = "vapoursynth-all-plugins";
+          paths = builtins.attrValues plugin-packages;
+        };
+      in
+      rec
+      {
+        packages = flake-utils.lib.flattenTree (plugin-packages // {
+          inherit vapoursynth-all-plugins;
+        });
 
-        defaultPackage = packages.vapoursynth-eedi3;
+        defaultPackage = packages.vapoursynth-all-plugins;
 
         # Format and lint the code on a pre-commit hook.
         checks = {
