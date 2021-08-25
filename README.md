@@ -1,3 +1,5 @@
+**This repository is archived. Use [tadeokondrak/vs-overlay](https://github.com/tadeokondrak/vs-overlay) instead**.
+
 # A collection of VapourSynth plugins in a Nix flake
 
 [![.github/workflows/build.yml](https://github.com/akirak/nix-vapoursynth-plugins/actions/workflows/build.yml/badge.svg)](https://github.com/akirak/nix-vapoursynth-plugins/actions/workflows/build.yml)
